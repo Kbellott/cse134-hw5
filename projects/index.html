@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Portfolio-Projects</title>
+    <link rel="stylesheet" media="screen and (min-width: 800px)" href="../content/otherBig.css"/>
+    <link rel="stylesheet" media="screen and (min-width: 641px) and (max-width: 799px)" href="../content/otherMedium.css"/>
+    <link rel="stylesheet" media="screen and (max-width: 640px)" href="../content/otherSmall.css"/> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="../favicon.ico"/>
+</head>
+
+<body>
+    <header>
+        <div id="rightOfBar">
+            <h1 id="mainHeading">Kiersten Bellotti - Software Engineer</h1>  
+            <nav id="mainNavBar">
+                <ul>
+                    <li class="roundedBoarder"><a href=../>Home</a></li>
+                    <li class="roundedBoarder"><a href=../projects/>Projects</a></li>
+                    <li class="roundedBoarder"><a href=../resume/>Resume</a></li>
+                    <li class="roundedBoarder"><a href=../contact/>Contact Me</a></li>
+                </ul>   
+            </nav>
+        </div>
+        <nav id="externalLinks">
+            <ul>
+                <li class="roundedBoarder"><a href=https://github.com/Kbellott/><i class="fa fa-github" style="font-size: 2rem;"></i><br/>Github</a></li>
+                <li class="roundedBoarder"><a href=https://www.linkedin.com/in/kiersten-bellotti-12b125225/><i class="fa fa-linkedin" style="font-size: 2rem;"></i><br/>LinkedIn</a></li>
+            </ul>
+        </nav>
+        <nav id="smallNavBar">
+            <div id="icon"> <i class="fa fa-bars" onclick="toggle()"></i></div>
+            <ul id="smallNav">
+                <li class="roundedBoarder"><a href=../projects/>Projects</a></li>
+                <li class="roundedBoarder"><a href=../resume/>Resume</a></li>
+                <li class="roundedBoarder"><a href=../contact/>Contact Me</a></li>
+                <li class="roundedBoarder"><a href=../>Home</a></li>
+                <li class="roundedBoarder"><a href=https://github.com/Kbellott/><i class="fa fa-github" style="font-size: 2rem;"></i><br/>Github</a></li>
+                <li class="roundedBoarder"><a href=https://www.linkedin.com/in/kiersten-bellotti-12b125225/><i class="fa fa-linkedin" style="font-size: 2rem;"></i><br/>LinkedIn</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <template id="projectTemplate">
+        <!-- A template for a basic project section -->
+        <section class="flexContainer">
+            <hr />
+            <h2><strong>Project Title</strong></h2>
+            <img src="#" alt="Image of project goes here">
+            <p>Short description</p>
+            <!-- This button currently does nothing but will be used to make a longer description visible -->
+            <button><i class="fa fa-caret-down"></i></button>
+            <p class="hiddenDesc" hidden>Long description</p>
+            <hr />
+        </section>
+    </template>
+
+    <main>
+        <h1>PROJECTS</h1>
+        <section class="flexContainer">
+            <hr />
+            <h2><strong>Debian Linux based Minecraft Server</strong></h2>
+            <picture class="flexContainer"> 
+                <source class="centered flexContainer" srcset="../content/Project1-MC1.webp" type="image/webp"/>
+                <img class="centered flexContainer" src="../content/Project1-MC1.jpg" alt="Image of the Minecraft server screen, displays one server online">
+            </picture>
+            <p>Worked with Debian Linux based OS to create a Minecraft server which runs multiple plugins. Wrote bash scripts to streamline 
+                the start/stop/restart functions as well as a crash fail-safe and restart function of that server. 
+                Continue to provide support to players and troubleshoot issues and bugs that arise to ensure server stays running and have upgraded hardware and software versions
+                while maintaining functionality and playability for players on the server.
+            </p>
+            <!-- This button currently does nothing but will be used to make a longer description visible -->
+            <button><i class="fa fa-caret-down"></i></button>
+            <p class="hiddenDesc" hidden>Long description which will go in to more detail on what I did and include more pictures</p>
+        </section>
+
+        <section class="flexContainer">
+            <hr />
+            <h2><strong>Personal Website</strong></h2>
+            <code>
+                // This website and all of its contents have been made by me :)
+            </code>
+            <p>This website serves as both a portfolio and a space for me to work on and develop my front end and design 
+                skills. As such I worked with HTML, CSS, and JavaScript to build this site from the ground up. This site
+                works on computer based browsers such as Chrome, Edge, Firefox, Webkit as well as on many android and apple 
+                devices.
+            </p>  
+            <p>In the future, I'd like to continue to develop my web centric skills, hosting this website on my own server computer and 
+                continuing to keep it up to date as a one stop portfolio and resume.
+            </p>   
+        </section>
+
+        <section class="flexContainer">
+            <hr />
+            <h2><strong>Project 3</strong></h2>
+            <p class="centered">There is no project 3, this is just a video I'd like to share with the CSE 134 staff</p>
+            <iframe class="flexContainer" width="560" height="315" src="https://www.youtube-nocookie.com/embed/9BalEldzE8o" title="YouTube video player" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen></iframe>
+            <p class="centered"><em>You have been stick-bugged</em></p>     
+        </section>
+
+    </main>
+
+    <aside class="pgdoll">
+        <img class="shake" src="https://f2.toyhou.se/file/f2-toyhou-se/images/52510232_7FonB0Ak0GCSCMj.gif?1658698722" alt="animated blinking cat character" height="150px">
+        <div class="speachbubble sb">
+            <p>I hope to add more projects to this list in the future! One such being working with openCV to develop hand tracking software.</p>
+        </div>
+    </aside>
+
+    <footer>
+        <hr />
+        <p id="footerMessage"><i class="fa fa-copyright"></i> 2023 | Kiersten Bellotti | Contact:</p>
+        <address>
+            Kiersten Bellotti <br />
+            San Diego, California<br />
+            kiersten.bellotti@gmail.com
+        </address>
+    </footer>
+    <cite><a href="https://unsplash.com/photos/hckbnUpcm6E"><i class="fa fa-code" title="Background Image"></i></a></cite>
+
+    <script>
+        function toggle(){
+            let x = document.getElementById("smallNav");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

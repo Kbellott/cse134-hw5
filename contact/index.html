@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Portfolio-Contact Me</title>
+    <link rel="stylesheet" media="screen and (min-width: 800px)" href="../content/otherBig.css"/>
+    <link rel="stylesheet" media="screen and (min-width: 641px) and (max-width: 799px)" href="../content/otherMedium.css"/>
+    <link rel="stylesheet" media="screen and (max-width: 640px)" href="../content/otherSmall.css"/> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="../favicon.ico"/>
+</head>
+
+<body>
+    <header>
+        <div id="rightOfBar">
+            <h1 id="mainHeading">Kiersten Bellotti - Software Engineer</h1>  
+            <nav id="mainNavBar">
+                <ul>
+                    <li class="roundedBoarder"><a href=../>Home</a></li>
+                    <li class="roundedBoarder"><a href=../projects/>Projects</a></li>
+                    <li class="roundedBoarder"><a href=../resume/>Resume</a></li>
+                    <li class="roundedBoarder"><a href=../contact/>Contact Me</a></li>
+                </ul>   
+            </nav>
+        </div>
+        <nav id="externalLinks">
+            <ul>
+                <li class="roundedBoarder"><a href=https://github.com/Kbellott/><i class="fa fa-github" style="font-size: 2rem;"></i><br/>Github</a></li>
+                <li class="roundedBoarder"><a href=https://www.linkedin.com/in/kiersten-bellotti-12b125225/><i class="fa fa-linkedin" style="font-size: 2rem;"></i><br/>LinkedIn</a></li>
+            </ul>
+        </nav>
+        <nav id="smallNavBar">
+            <div id="icon"> <i class="fa fa-bars" onclick="toggle()"></i></div>
+            <ul id="smallNav">
+                <li class="roundedBoarder"><a href=../projects/>Projects</a></li>
+                <li class="roundedBoarder"><a href=../resume/>Resume</a></li>
+                <li class="roundedBoarder"><a href=../contact/>Contact Me</a></li>
+                <li class="roundedBoarder"><a href=../>Home</a></li>
+                <li class="roundedBoarder"><a href=https://github.com/Kbellott/><i class="fa fa-github" style="font-size: 2rem;"></i><br/>Github</a></li>
+                <li class="roundedBoarder"><a href=https://www.linkedin.com/in/kiersten-bellotti-12b125225/><i class="fa fa-linkedin" style="font-size: 2rem;"></i><br/>LinkedIn</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <i class="fa fa-envelope" style="text-align: center; font-size: 5rem;"></i>
+        <h1>Contact</h1>
+        <hr/>
+        <p id="contact">Send me a message to chat or email me at <strong> kiersten.bellotti@gmail.com</strong></p>
+        <form action="javascript:submit()" method="POST" class="form">
+            <fieldset id="yourInfo" class="field">
+                <label for="prefix">Prefix:
+                    <br/>
+                    <input list="prefixType" name="prefix" id="prefix" class="visitorfield" >
+                    <datalist id="prefixType">
+                        <option value="Mr.">
+                        <option value="Ms.">
+                        <option value="Mrs.">
+                    </datalist>
+                </label>
+                <br/>
+                <label for="name">Name: <strong id="required">*</strong>
+                    <br/>
+                    <input type="text" name="name" id="name" class="visitorfield" required>
+                </label>
+                <br/>
+                <label for="contactInfo">Contact Info: <strong id="required">*</strong>
+                    <br/>
+                    <input type="email" name="contactInfo" id="contactInfo"  class="visitorfield" required>
+                </label>
+            </fieldset>
+            <fieldset id="messageInfo" class="field">
+                <label for="messages">Choose a message type:
+                    <br/>
+                    <select name="messages" id="messages" class="visitorfield" >
+                        <option value="">--Please choose an option--</option>
+                        <optgroup label="Work Related">
+                            <option value="freelanceWork">Freelance Work</option>
+                            <option value="jobOffer">Job Offer</option>
+                            <option value="inquary">Question or Inquaries</option>
+                        </optgroup>
+                        <optgroup label="For Fun">
+                            <option value="petRequest">Request to see cat pics</option>
+                        </optgroup>
+                    </select>
+                </label>
+                <br/>
+                <label for="message">Enter your message: <strong id="required">*</strong>
+                    <br/>
+                    <textarea name="message" id="message" cols="50" rows="10" class="visitorfield" required></textarea>
+                </label>
+            </fieldset>
+            <div class="flexContainer">
+                <button type="submit"><p>Send</p></button>
+                <br/>
+                <button type="reset"><p>Clear Form</p></button>
+            </div>
+        </form>
+
+        <script>
+            let submit = () => {
+                let values = "Your message: \n";
+                values += document.getElementsByName("prefix")[0].value + " ";
+                values += document.getElementsByName("name")[0].value + " at ";
+                values += document.getElementsByName("contactInfo")[0].value + "\n";
+                values += "Message: \n" + document.getElementsByName("message")[0].value + "\n";
+                alert(values);
+            };
+        </script>
+
+        <aside class="pgdoll">
+            <img class="shake" src="https://f2.toyhou.se/file/f2-toyhou-se/images/52510232_7FonB0Ak0GCSCMj.gif?1658698722" alt="animated blinking cat character" height="150px">
+            <div class="speachbubble sb">
+                <p>Thank you for visiting my site! I should get back to you soon and I look forward to many future ventures and adventures together.</p>
+            </div>
+        </aside>
+    </main>
+
+    <cite><a href="https://unsplash.com/photos/hckbnUpcm6E"><i class="fa fa-code" title="Background Image"></i></a></cite>
+
+    <footer>
+        <hr />
+        <p id="footerMessage"><i class="fa fa-copyright"></i> 2023 | Kiersten Bellotti | Contact:</p>
+        <address>
+            Kiersten Bellotti <br />
+            San Diego, California<br />
+            kiersten.bellotti@gmail.com
+        </address>
+    </footer>
+
+    <script>
+        function toggle(){
+            let x = document.getElementById("smallNav");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

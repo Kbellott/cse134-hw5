@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>JS Buttons 2</title>
+    <link rel="icon" href="../favicon.ico"/>
+    <link rel="stylesheet" href="hw4.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.1/purify.min.js" integrity="sha512-TU4FJi5o+epsahLtM9OFRvH2gXmmlzGlysk9wtTFgbYbMvFzh3Cw1l3ubnYIvBiZCC/aurRHS408TeEbcuOoyQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <main>
+        <h1>Simple Dialogs (Part 2)</h1>
+        <button id="alert" class="select">Alert</button> 
+        <button id="confirm" class="select">Confirm</button> 
+        <button id="prompt" class="select">Prompt</button>
+        <button id="safePrompt" class="select">Safer Prompt</button>
+        <hr>
+        <output id="result" for="confirm prompt safePrompt" style="visibility: visible;">Click a button!</output>
+    </main>    
+
+    <script type="module">
+        import {customDialog} from './customdialog.js'
+        let alertPopup = new customDialog("alert");
+        let confirmPopup = new customDialog("confirm");
+        let promptPopup = new customDialog("prompt");
+        let safePopup = new customDialog("safePrompt");
+
+        function loadHandler(){
+            let btns = document.querySelectorAll('.select');
+            btns.forEach(currentBtn =>{
+                    currentBtn.addEventListener('click', clickHandler);
+                    });
+        }
+
+        function clickHandler(){
+            let test = document.querySelector('#promptText');
+            let test2 = document.querySelector('#promptText2');
+
+            switch(event.target.id){
+                case "confirm":
+                    confirmPopup.display();
+                    break;
+
+                case "prompt":
+                    test.value = null;
+                    promptPopup.display();
+                    break;
+
+                case "safePrompt":
+                    test2.value = null;
+                    safePopup.display();
+                    break;
+                
+                case "alert":
+                    alertPopup.display();
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', loadHandler);
+        
+    </script>
+</body>
+</html>

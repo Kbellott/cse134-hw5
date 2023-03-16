@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Kiersten's Portfolio</title>
+    <link rel="stylesheet" media="screen and (min-width: 800px)" href="mainBig.css"/>
+    <link rel="stylesheet" media="screen and (min-width: 641px) and (max-width: 799px)" href="mainMedium.css"/>
+    <link rel="stylesheet" media="screen and (max-width: 640px)" href="mainSmall.css"/> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="favicon.ico"/>
+</head>
+
+<body class="grid">
+    <header>
+        <div id="rightOfBar">
+            <h1 id="mainHeading">Kiersten Bellotti - Software Engineer</h1>  
+            <nav id="mainNavBar">
+                <ul>
+                    <li class="roundedBoarder"><a href=projects/>Projects</a></li>
+                    <li class="roundedBoarder"><a href=resume/>Resume</a></li>
+                    <li class="roundedBoarder"><a href=contact/>Contact Me</a></li>
+                    <li class="roundedBoarder"><a href=experiments/Part1/methodtest.html>HW5</a></li>
+
+                </ul>
+            </nav>
+        </div>
+        <nav id="externalLinks">
+            <ul>
+                <li class="roundedBoarder"><a href=https://github.com/Kbellott/><i class="fa fa-github" style="font-size: 2rem;"></i><br/>Github</a></li>
+                <li class="roundedBoarder"><a href=https://www.linkedin.com/in/kiersten-bellotti-12b125225/><i class="fa fa-linkedin" style="font-size: 2rem;"></i><br/>LinkedIn</a></li>
+            </ul>
+        </nav>
+        <nav id="smallNavBar">
+            <div id="icon"> <i class="fa fa-bars" onclick="toggle()"></i></div>
+            <ul id="smallNav">
+                <li class="roundedBoarder"><a href=projects/>Projects</a></li>
+                <li class="roundedBoarder"><a href=resume/>Resume</a></li>
+                <li class="roundedBoarder"><a href=contact/>Contact Me</a></li>
+                <li class="roundedBoarder"><a href=https://github.com/Kbellott/><i class="fa fa-github" style="font-size: 2rem;"></i><br/>Github</a></li>
+                <li class="roundedBoarder"><a href=https://www.linkedin.com/in/kiersten-bellotti-12b125225/><i class="fa fa-linkedin" style="font-size: 2rem;"></i><br/>LinkedIn</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="fakeBrowserBar">
+            <br/>
+            <i class="fa fa-times fake"></i>
+            <i class="fa fa-window-maximize fake"></i>
+            <i class="fa fa-window-minimize fake"></i>
+        </div>
+        <div id="pageContent">
+            <picture> 
+                <source srcset="content/ProfilePic.webp" media="(min-width:500px)" type="image/webp" />
+                <source srcset="content/ProfilePicSmall.webp" type="image/webp" />
+                <source srcset="content/ProfilePic.jpg" media="(min-width:500px)" />
+                <img src="content/ProfilePicSmall.jpg" alt="Picture of me: A blonde woman smiling in the center of the picture with plants behind her" height="250">
+            </picture>
+            <h2 id="helloMessage1">"HELLO";</h2>
+            <h3 class="helloMessage2">I'M KIERSTEN </h3>
+            <h3 class="helloMessage2">BELLOTTI</h3>
+            <hr />
+            <p class="description">I'm a budding software engineer based in California, USA. 
+                Currently, I'm busy finishing my Bachelors of Science in Computer Engineering at University of California, San Diego, but if you 
+                check back in a few months I'll be on my way working with, and developing drones and other defense technologies at 
+                <a href="https://www.ga-asi.com/" id="generalAtomicsLink">General Atomics</a>.
+            </p>
+            <p class="description">I have a passion for web design and most things digital. In my free time I like to game and draw. I'm a huge nerd for fantasy 
+                    and I love cats/gardening!
+            </p>
+        </div>
+    </main>
+
+    <aside class="pgdoll">
+        <img class="shake" src="https://f2.toyhou.se/file/f2-toyhou-se/images/52510232_7FonB0Ak0GCSCMj.gif?1658698722" alt="animated blinking cat character" height="150px">
+        <div class="speachbubble sb">
+            <p>I'd love to connect with you for business inquiries, or over a mutual love of any shared interest! </p>
+        </div>
+    </aside>
+
+    <footer>
+        <hr />
+        <p id="footerMessage"><i class="fa fa-copyright"></i> 2023 | Kiersten Bellotti | Contact:</p>
+        <address>
+            Kiersten Bellotti <br />
+            San Diego, California<br />
+            kiersten.bellotti@gmail.com
+        </address>
+    </footer>
+
+    <cite><a href="https://unsplash.com/photos/hckbnUpcm6E"><i class="fa fa-code" title="Background Image"></i></a></cite>
+
+    <script>
+        function toggle(){
+            let x = document.getElementById("smallNav");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

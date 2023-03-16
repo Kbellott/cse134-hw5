@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>JS Blog</title>
+    <link rel="icon" href="../favicon.ico"/>
+    <link rel="stylesheet" href="hw4blog.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.1/purify.min.js" integrity="sha512-TU4FJi5o+epsahLtM9OFRvH2gXmmlzGlysk9wtTFgbYbMvFzh3Cw1l3ubnYIvBiZCC/aurRHS408TeEbcuOoyQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <!-- template for later-->
+    <template>
+        <section class="blogPost">
+            <div class="blogContent">
+                <hr>
+                <h2>Title</h2>
+                <p>Post Date</p>
+                <p>Post Summary</p>
+                <hr>
+            </div>
+            <div class="editMenu" hidden>
+                <hr>
+                <button class="deletepost">Delete</button>
+                <button class="editpost">Edit</button>
+                <hr>
+            </div>
+        </section>
+    </template>
+
+    <header>
+        <div id="rightOfBar">
+            <h1 id="mainHeading">Kiersten Bellotti - Software Engineer</h1>  
+            <nav id="mainNavBar">
+                <ul>
+                    <li class="roundedBoarder"><a href=../>Home</a></li>
+                    <li class="roundedBoarder"><a href=Nativedialogs_Pt1-2/nativedialogs-pt1.html>Part 1</a></li>
+                    <li class="roundedBoarder"><a href=Nativedialogs_Pt1-2/nativedialogs-pt2.html>Part 2</a></li>
+                    <li class="roundedBoarder"><a href=UnstylizedCrud_Pt3/blogCRUD.html>Part 3</a></li>
+                </ul>   
+            </nav>
+        </div>
+        <nav id="externalLinks">
+            <ul>
+                <li class="roundedBoarder"><a href=https://github.com/Kbellott/><i class="fa fa-github" style="font-size: 2rem;"></i><br/>Github</a></li>
+                <li class="roundedBoarder"><a href=https://www.linkedin.com/in/kiersten-bellotti-12b125225/><i class="fa fa-linkedin" style="font-size: 2rem;"></i><br/>LinkedIn</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1 id="recent">Recent Activity</h1>
+        <hr>
+        <button id="add"><i class="fa fa-light fa-plus"> Add Post</i></button>
+        <hr>
+        <h2>Posts:</h2>
+    </main>  
+
+    <script type="module">
+        import {blogPost} from './styledblogpost.js';
+        import {addPostDialog} from './styledblogpost.js';
+        const myBlogs = new Array();
+
+        let createPopup = new addPostDialog();
+
+        function loadHandler(){
+            let addbtn = document.querySelector('#add');
+            addbtn.addEventListener('click', clickHandler);
+        }
+
+        function clickHandler(){
+            createPopup.display();
+            //myBlogs[myBlogs.length]=
+        }
+
+        function debug(){
+
+        }
+
+        window.addEventListener('DOMContentLoaded', loadHandler);
+    </script>
+</body>
+</html>

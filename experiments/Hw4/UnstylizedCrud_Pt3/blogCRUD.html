@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>JS Blog</title>
+    <link rel="icon" href="../favicon.ico"/>
+    <link rel="stylesheet" href="hw4blog.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.1/purify.min.js" integrity="sha512-TU4FJi5o+epsahLtM9OFRvH2gXmmlzGlysk9wtTFgbYbMvFzh3Cw1l3ubnYIvBiZCC/aurRHS408TeEbcuOoyQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <!-- template for later-->
+    <template>
+        <section class="blogPost">
+            <div class="blogContent">
+                <hr>
+                <h2>Title</h2>
+                <p>Post Date</p>
+                <p>Post Summary</p>
+                <hr>
+            </div>
+            <div class="editMenu" hidden>
+                <hr>
+                <button class="deletepost">Delete</button>
+                <button class="editpost">Edit</button>
+                <hr>
+            </div>
+        </section>
+    </template>
+
+    <header>
+        
+    </header>
+
+    <main>
+        <h1>Recent Activity</h1>
+        <hr>
+        <button id="add">Add</button>
+        <hr>
+        <h2>Posts:</h2>
+    </main>  
+
+    <script type="module">
+        import {blogPost} from './blogpost.js';
+        import {addPostDialog} from './blogpost.js';
+        const myBlogs = new Array();
+
+        let createPopup = new addPostDialog();
+
+        function loadHandler(){
+            let addbtn = document.querySelector('#add');
+            addbtn.addEventListener('click', clickHandler);
+            let debugbtn = document.querySelector('#debug');
+            debugbtn.addEventListener('click', debug);
+        }
+
+        function clickHandler(){
+            createPopup.display();
+            //myBlogs[myBlogs.length]=
+        }
+
+        function debug(){
+
+        }
+
+        window.addEventListener('DOMContentLoaded', loadHandler);
+    </script>
+</body>
+</html>

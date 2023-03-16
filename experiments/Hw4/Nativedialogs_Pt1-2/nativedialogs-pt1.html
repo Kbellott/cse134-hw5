@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>JS Buttons</title>
+    <link rel="icon" href="favicon.ico"/>
+    <link rel="stylesheet" href="hw4.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.1/purify.min.js" integrity="sha512-TU4FJi5o+epsahLtM9OFRvH2gXmmlzGlysk9wtTFgbYbMvFzh3Cw1l3ubnYIvBiZCC/aurRHS408TeEbcuOoyQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <main>
+        <h1>Simple Dialogs (Part 1)</h1>
+        <button id="alert">Alert</button> 
+        <button id="confirm">Confirm</button> 
+        <button id="prompt">Prompt</button>
+        <button id="safePrompt">Safer Prompt</button>
+        <hr>
+        <output id="result" for="confirm prompt safePrompt" style="visibility: visible;">Click a button!</output>
+    </main>    
+
+    <script type="module">
+        function loadHandler(){
+            let btns = document.querySelectorAll('button');
+            btns.forEach(currentBtn =>{
+                    currentBtn.addEventListener('click', clickHandler)
+                    });
+        }
+
+        function clickHandler(){
+            let out = document.querySelector('#result');
+            let txt = "";
+
+            switch(event.target.id){
+                case "confirm":
+                    out.textContent = `Confirm result: ${confirm("Can you confirm this?")}`;
+                    break;
+
+                case "prompt":
+                    if(txt = prompt("Please enter something:")){
+                        out.innerHTML = `Prompt result: ${txt}`;
+                    } else {
+                        out.innerHTML = `User didn't enter anything`;
+                    }
+                    break;
+
+                case "safePrompt":
+                    let cleaned = DOMPurify.sanitize(prompt("Please enter something:"));
+                    if(cleaned){
+                        out.innerHTML = `Prompt result: ${cleaned}`;
+                    } else {
+                        out.innerHTML = `User didn't enter anything`;
+                    }
+                    break;
+
+                default:
+                    alert("Alert clicked!");
+                    out.textContent = "Alert clicked (click another button)";
+                    break;
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', loadHandler);
+        
+    </script>
+</body>
+</html>

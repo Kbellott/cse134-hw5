@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>HTML Form</title>
+    <link rel="icon" href="../favicon.ico"/>
+    <link rel="stylesheet" href="methodtest.css">
+    <script src="methodtest.js" defer></script>
+  </head>
+
+  <body>
+    <header>
+      <div id="rightOfBar">
+          <nav id="mainNavBar">
+              <ul>
+                  <li class="roundedBoarder"><a href=../../>Home</a></li>
+                  <li class="roundedBoarder"><a href=../Part2/webcomponent.html>Part 2</a></li>
+              </ul>   
+          </nav>
+      </div>
+  </header>
+
+    <main>
+      <h1>HW 5 Part 1 - HTTP Requests</h1>
+      <form id="articleForm">
+        <label for="id_input">ID:
+          <br>
+          <input type="number" id="id_input" name="id">
+        </label>
+        <label for="article_name">Article Name:
+          <br>
+          <input type="text" id="article_name" name="article_name">
+        </label>
+        <label for="article_body">Article Body:
+          <br>
+          <textarea id="article_body" name="article_body" cols="65" rows="10"></textarea>
+        </label>
+        <button type="button" onclick="sendHttpRequest('POST')">POST</button>
+        <button type="button" onclick="sendHttpRequest('GET')">GET</button>
+        <button type="button" onclick="sendHttpRequest('PUT')">PUT</button>
+        <button type="button" onclick="sendHttpRequest('DELETE')">DELETE</button>
+      </form>
+      <hr>
+      <output id="response"></output>
+    </main> 
+  </body>
+</html>
